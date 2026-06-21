@@ -1,0 +1,203 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Understanding M12 Connector Coding: A, B, D, X-Code Explained"
+  description="Everything you need to know about M12 connector coding types for sensors, Ethernet, and power applications."
+  publishDate="2025-06-05"
+  readTime="6"
+  tag="Reference"
+>
+  <div class="blog-post-body">
+    <div class="i18n-content" data-lang="en">
+      <h1>Understanding M12 Connector Coding: A, B, D, X-Code Explained</h1>
+
+      <p>M12 connectors are everywhere in industrial automation — sensors, actuators, fieldbus networks, and industrial Ethernet. But with multiple coding types (A, B, C, D, X, S, T), it is easy to order the wrong one.</p>
+
+      <p>This guide explains each coding type and when to use it.</p>
+
+      <h2>What Does "Coding" Mean?</h2>
+      <p>M12 connectors use a <strong>coded keying system</strong> — a physical notch on the connector that prevents you from mating incompatible connectors together. Think of it like USB-A vs USB-B: you cannot physically plug one into the other.</p>
+
+      <p>The coding type determines:</p>
+      <ul>
+        <li>Which applications the connector is designed for</li>
+        <li>How many pins it supports</li>
+        <li>What speed/data protocol it carries</li>
+      </ul>
+
+      <h2>The Main Coding Types</h2>
+
+      <h3>A-Code: The General Purpose Connector</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Pins</strong></td><td>3, 4, 5, 8, 12</td></tr>
+          <tr><td><strong>Speed</strong></td><td>Up to 100 Mbps</td></tr>
+          <tr><td><strong>Use</strong></td><td>Sensors, actuators, DC power</td></tr>
+          <tr><td><strong>IP Rating</strong></td><td>IP67 / IP68</td></tr>
+        </tbody>
+      </table>
+      <p><strong>A-code</strong> is the most common M12 connector. If you are connecting a proximity sensor, photoelectric sensor, or simple actuator, this is what you need.</p>
+
+      <h3>B-Code: For PROFIBUS</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Pins</strong></td><td>4, 5</td></tr>
+          <tr><td><strong>Speed</strong></td><td>Up to 12 Mbps</td></tr>
+          <tr><td><strong>Use</strong></td><td>PROFIBUS DP/PA</td></tr>
+        </tbody>
+      </table>
+      <p><strong>B-code</strong> is specifically designed for PROFIBUS fieldbus communication. If you are not using PROFIBUS, you will likely never need this.</p>
+
+      <h3>D-Code: For Industrial Ethernet (100 Mbps)</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Pins</strong></td><td>4</td></tr>
+          <tr><td><strong>Speed</strong></td><td>100 Mbps (Cat5e)</td></tr>
+          <tr><td><strong>Use</strong></td><td>PROFINET, EtherCAT, Modbus TCP</td></tr>
+          <tr><td><strong>IP Rating</strong></td><td>IP67</td></tr>
+        </tbody>
+      </table>
+      <p><strong>D-code</strong> is the standard for 100 Mbps industrial Ethernet. If your robot or machine uses PROFINET or EtherCAT, you need D-code connectors.</p>
+
+      <h3>X-Code: For Gigabit Ethernet (10 Gbps)</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Pins</strong></td><td>8</td></tr>
+          <tr><td><strong>Speed</strong></td><td>10 Gbps (Cat6a)</td></tr>
+          <tr><td><strong>Use</strong></td><td>Gigabit Ethernet, high-speed data</td></tr>
+          <tr><td><strong>IP Rating</strong></td><td>IP67 / IP68</td></tr>
+        </tbody>
+      </table>
+      <p><strong>X-code</strong> is the premium choice for high-speed Ethernet. It uses individually shielded twisted pairs (SFTP) to achieve 10 Gbps. For robotics vision systems or industrial IoT applications requiring high bandwidth, X-code is the right choice.</p>
+
+      <h2>Quick Selection Guide</h2>
+
+      <table>
+        <thead><tr><th>Your Application</th><th>Use This Code</th></tr></thead>
+        <tbody>
+          <tr><td>Proximity / photoelectric sensor</td><td><strong>A-code</strong> (3 or 4 pin)</td></tr>
+          <tr><td>Actuator / solenoid valve</td><td><strong>A-code</strong> (4 or 5 pin)</td></tr>
+          <tr><td>PROFIBUS network</td><td><strong>B-code</strong> (4 or 5 pin)</td></tr>
+          <tr><td>PROFINET / EtherCAT (100M)</td><td><strong>D-code</strong> (4 pin)</td></tr>
+          <tr><td>Gigabit Ethernet (1G/10G)</td><td><strong>X-code</strong> (8 pin)</td></tr>
+          <tr><td>Power (AC, high current)</td><td><strong>S-code</strong> (3 or 4 pin)</td></tr>
+          <tr><td>Power (DC, high current)</td><td><strong>T-code</strong> (4 or 5 pin)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Pin Number Matters Too</h2>
+      <p>Even within the same coding type, the number of pins matters. A 4-pin A-code connector will not mate with a 5-pin A-code connector (the keying is the same, but the pins do not align).</p>
+
+      <p>Common pin configurations:</p>
+      <ul>
+        <li><strong>3-pin</strong>: DC sensors (PNP/NPN + GND)</li>
+        <li><strong>4-pin</strong>: DC sensors with I/O, or Ethernet (D-code)</li>
+        <li><strong>5-pin</strong>: Analog signals, IO-Link</li>
+        <li><strong>8-pin</strong>: Gigabit Ethernet (X-code), or combined power+signal</li>
+      </ul>
+
+      <h2>Mating Compatibility</h2>
+      <p><strong>Different coding types cannot mate.</strong> This is intentional — it prevents expensive mistakes in industrial installations.</p>
+
+      <hr/>
+      <p><em>Questions? Email info@visioncablesupply.com</em></p>
+    </div>
+
+    <div class="i18n-content" data-lang="zh" style="display:none;">
+      <h1>M12 连接器编码详解：A、B、D、X-Code 说明</h1>
+
+      <p>M12 连接器在工业自动化中无处不在——传感器、执行器、现场总线网络和工业以太网。但有多种编码类型（A、B、C、D、X、S、T），很容易买错。</p>
+
+      <p>本指南解释每种编码类型及其使用场景。</p>
+
+      <h2>"编码"是什么意思？</h2>
+      <p>M12 连接器使用 <strong>编码键控系统</strong>——连接器上的物理卡口，防止你不兼容的连接器插在一起。类似于 USB-A 和 USB-B：你物理上无法将一个插入另一个。</p>
+
+      <p>编码类型决定了：</p>
+      <ul>
+        <li>连接器适用的应用场景</li>
+        <li>支持的引脚数</li>
+        <li>承载的速度/数据协议</li>
+      </ul>
+
+      <h2>主要编码类型</h2>
+
+      <h3>A-Code：通用连接器</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>引脚数</strong></td><td>3、4、5、8、12</td></tr>
+          <tr><td><strong>速度</strong></td><td>最高 100 Mbps</td></tr>
+          <tr><td><strong>用途</strong></td><td>传感器、执行器、直流电源</td></tr>
+          <tr><td><strong>防护等级</strong></td><td>IP67 / IP68</td></tr>
+        </tbody>
+      </table>
+      <p><strong>A-code</strong> 是最常见的 M12 连接器。如果你在连接接近开关、光电传感器或简单的执行器，这就是你需要的。</p>
+
+      <h3>B-Code：用于 PROFIBUS</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>引脚数</strong></td><td>4、5</td></tr>
+          <tr><td><strong>速度</strong></td><td>最高 12 Mbps</td></tr>
+          <tr><td><strong>用途</strong></td><td>PROFIBUS DP/PA</td></tr>
+        </tbody>
+      </table>
+      <p><strong>B-code</strong> 专为 PROFIBUS 现场总线通信设计。如果你不用 PROFIBUS，可能永远不会用到这个。</p>
+
+      <h3>D-Code：用于工业以太网（100 Mbps）</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>引脚数</strong></td><td>4</td></tr>
+          <tr><td><strong>速度</strong></td><td>100 Mbps (Cat5e)</td></tr>
+          <tr><td><strong>用途</strong></td><td>PROFINET、EtherCAT、Modbus TCP</td></tr>
+          <tr><td><strong>防护等级</strong></td><td>IP67</td></tr>
+        </tbody>
+      </table>
+      <p><strong>D-code</strong> 是 100 Mbps 工业以太网的标准。如果你的机器人或设备使用 PROFINET 或 EtherCAT，你需要 D-code 连接器。</p>
+
+      <h3>X-Code：用于千兆以太网（10 Gbps）</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>引脚数</strong></td><td>8</td></tr>
+          <tr><td><strong>速度</strong></td><td>10 Gbps (Cat6a)</td></tr>
+          <tr><td><strong>用途</strong></td><td>千兆以太网、高速数据</td></tr>
+          <tr><td><strong>防护等级</strong></td><td>IP67 / IP68</td></tr>
+        </tbody>
+      </table>
+      <p><strong>X-code</strong> 是高速以太网的高端选择。它使用独立屏蔽双绞线（SFTP）实现 10 Gbps。对于需要高带宽的机器人视觉系统或工业物联网应用，X-code 是正确的选择。</p>
+
+      <h2>快速选型指南</h2>
+
+      <table>
+        <thead><tr><th>你的应用</th><th>使用此编码</th></tr></thead>
+        <tbody>
+          <tr><td>接近开关 / 光电传感器</td><td><strong>A-code</strong>（3 或 4 pin）</td></tr>
+          <tr><td>执行器 / 电磁阀</td><td><strong>A-code</strong>（4 或 5 pin）</td></tr>
+          <tr><td>PROFIBUS 网络</td><td><strong>B-code</strong>（4 或 5 pin）</td></tr>
+          <tr><td>PROFINET / EtherCAT (100M)</td><td><strong>D-code</strong>（4 pin）</td></tr>
+          <tr><td>千兆以太网 (1G/10G)</td><td><strong>X-code</strong>（8 pin）</td></tr>
+          <tr><td>电源（交流，大电流）</td><td><strong>S-code</strong>（3 或 4 pin）</td></tr>
+          <tr><td>电源（直流，大电流）</td><td><strong>T-code</strong>（4 或 5 pin）</td></tr>
+        </tbody>
+      </table>
+
+      <h2>引脚数也很重要</h2>
+      <p>即使编码类型相同，引脚数也很重要。4-pin A-code 连接器无法与 5-pin A-code 连接器对接（编码相同，但引脚不对齐）。</p>
+
+      <p>常见引脚配置：</p>
+      <ul>
+        <li><strong>3-pin</strong>：直流传感器（PNP/NPN + GND）</li>
+        <li><strong>4-pin</strong>：带 I/O 的直流传感器，或以太网（D-code）</li>
+        <li><strong>5-pin</strong>：模拟信号、IO-Link</li>
+        <li><strong>8-pin</strong>：千兆以太网（X-code），或电源+信号组合</li>
+      </ul>
+
+      <h2>对接兼容性</h2>
+      <p><strong>不同编码类型无法对接。</strong> 这是有意设计的——防止工业安装中的昂贵错误。</p>
+
+      <hr/>
+      <p><em>有问题？发送邮件至 info@visioncablesupply.com</em></p>
+    </div>
+  </div>
+</BlogLayout>

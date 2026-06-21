@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const specs = [
+  { label: 'Lane Configuration', value: '1-Lane / 2-Lane / 4-Lane (CSI-2)' },
+  { label: 'Connector Pitch', value: '0.5mm (DF40 / FH12 series)' },
+  { label: 'Cable Type', value: 'Flexible FPC / Coaxial / Twisted pair' },
+  { label: 'Impedance', value: '90 Ohm +/- 10% (differential)' },
+  { label: 'Shielding', value: 'Dual-layer: aluminum foil + copper braid (85%+ coverage)' },
+  { label: 'Data Rate', value: 'Up to 1.5 Gbps per lane' },
+  { label: 'Operating Temp', value: '-40degC to +85degC' },
+  { label: 'Length Options', value: '50mm - 500mm (custom lengths available)' },
+  { label: 'Certifications', value: 'RoHS / REACH compliant' },
+];
+
+const applications = [
+  'Robot navigation cameras (AGV/AMR)',
+  'Industrial inspection systems',
+  'Autonomous vehicle perception',
+  'Drone gimbal cameras',
+  'Medical imaging devices',
+  'Embedded AI vision modules',
+  '3D depth sensing (stereo vision)',
+  'Smart surveillance systems',
+];
+---
+
+<Layout
+  title="MIPI CSI-2 Camera Cables"
+  description="High-speed MIPI CSI-2 camera cables for robotics and embedded vision. 1/2/4-Lane, 0.5mm pitch, dual-layer shielding."
+>
+  <section class="page-header">
+    <div class="container">
+      <a href="/products" class="back-link">&larr; All Products</a>
+      <span class="badge">Robotics Vision</span>
+      <h1>MIPI CSI-2 Camera Cables</h1>
+      <p>High-speed MIPI CSI-2 cables engineered for robot cameras and embedded vision systems where signal integrity is critical.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container product-detail">
+      <div class="product-overview card">
+        <h2>Product Overview</h2>
+        <p>
+          Our MIPI CSI-2 cables are designed for high-speed camera sensor communication in
+          robotics and embedded vision applications. Each cable features dual-layer shielding
+          (aluminum foil + copper braid with 85%+ coverage) to minimize EMI interference,
+          ensuring reliable image data transmission even in electrically noisy environments.
+        </p>
+        <p>
+          We support 1-Lane, 2-Lane, and 4-Lane configurations with standard 0.5mm pitch
+          connectors (DF40, FH12 series). Custom lengths from 50mm to 500mm are available,
+          and we can accommodate specific connector requirements from your sensor manufacturer.
+        </p>
+      </div>
+
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tbody>
+          {specs.map(s => (
+            <tr>
+              <th>{s.label}</th>
+              <td>{s.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <div class="info-grid">
+        <div class="info-card card">
+          <h3>Connector Compatibility</h3>
+          <ul>
+            <li>Hirose DF40 series (0.4mm pitch)</li>
+            <li>Hirose FH12 series (0.5mm pitch)</li>
+            <li>Amphenol 10051922 series</li>
+            <li>Samsung/Sony sensor compatible</li>
+            <li>Raspberry Pi CSI connector compatible</li>
+            <li>NVIDIA Jetson CSI connector compatible</li>
+          </ul>
+        </div>
+        <div class="info-card card">
+          <h3>Shielding Details</h3>
+          <ul>
+            <li><b>Inner shield:</b> Aluminum foil (100% coverage)</li>
+            <li><b>Outer shield:</b> Tin-plated copper braid (85%+ coverage)</li>
+            <li><b>Drain wire:</b> Tinned copper AWG 28</li>
+            <li><b>Effect:</b> 40dB+ noise attenuation at 1GHz</li>
+            <li><b>Grounding:</b> Shield terminated to connector GND pads</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Typical Applications</h2>
+      <div class="app-tags">
+        {applications.map(a => <span class="app-tag">{a}</span>)}
+      </div>
+
+      <h2>Selection Guide</h2>
+      <div class="selection-guide card">
+        <h3>How to Order</h3>
+        <p>When requesting a quote, please provide:</p>
+        <ol>
+          <li><b>Sensor / SoC model</b> &mdash; e.g., Sony IMX219, OmniVision OV5647</li>
+          <li><b>Lane count</b> &mdash; 1, 2, or 4 Lane</li>
+          <li><b>Required length</b> &mdash; in millimeters</li>
+          <li><b>Connector type</b> &mdash; on both ends (or share a datasheet)</li>
+          <li><b>Operating environment</b> &mdash; temperature range, vibration, chemical exposure</li>
+        </ol>
+        <p>We will confirm compatibility and provide a detailed quote within 24 hours.</p>
+      </div>
+
+      <div class="detail-cta">
+        <a href="/contact" class="btn btn--primary">Request Quote for This Product</a>
+        <a href="/blog/how-to-choose-mipi-cable" class="btn btn--outline">Read Selection Guide</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #f0f5ff 0%, #e8f4f8 100%);
+  padding: 40px 0 36px;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin: 12px 0;
+}
+
+.page-header p {
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.product-detail {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.product-detail h2 {
+  margin-top: 48px;
+  margin-bottom: 20px;
+}
+
+.product-overview {
+  padding: 32px;
+  margin-bottom: 0;
+}
+
+.product-overview h2 {
+  margin-top: 0;
+}
+
+.product-overview p {
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.info-card {
+  padding: 28px;
+}
+
+.info-card h3 {
+  margin-bottom: 16px;
+}
+
+.info-card ul {
+  list-style: none;
+}
+
+.info-card li {
+  padding: 6px 0;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.app-tag {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.selection-guide {
+  padding: 32px;
+}
+
+.selection-guide h3 {
+  margin-bottom: 12px;
+}
+
+.selection-guide ol {
+  padding-left: 1.5em;
+  margin: 16px 0;
+}
+
+.selection-guide li {
+  margin-bottom: 10px;
+}
+
+.detail-cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 48px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .detail-cta { flex-direction: column; }
+  .page-header h1 { font-size: 1.6rem; }
+}
+</style>

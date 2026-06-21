@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    titleEn: 'How to Choose the Right MIPI Cable for Your Robot Camera',
+    titleZh: '如何为机器人摄像头选择合适的 MIPI 线缆',
+    excerptEn: 'A practical guide to selecting MIPI CSI-2 cables based on lane count, pitch, shielding, and connector compatibility for robotics vision applications.',
+    excerptZh: '一份实用指南，介绍如何根据 Lane 数量、间距、屏蔽和连接器兼容性为机器人视觉应用选择 MIPI CSI-2 线缆。',
+    date: '2025-06-15',
+    href: '/blog/how-to-choose-mipi-cable',
+    tag: 'Selection Guide',
+    readTime: '8',
+  },
+  {
+    titleEn: 'MIPI vs GMSL vs FPD-Link: Which Interface Is Best for Your Application?',
+    titleZh: 'MIPI vs GMSL vs FPD-Link：哪种接口最适合你的应用？',
+    excerptEn: 'Comparing the three most common camera serdes interfaces used in automotive and robotics vision systems. Data rates, cable lengths, and cost trade-offs.',
+    excerptZh: '对比汽车和机器人视觉系统中最常见的三种摄像头 SerDes 接口。数据速率、线缆长度和成本取舍。',
+    date: '2025-06-10',
+    href: '/blog/mipi-vs-gmsl-vs-fpd-link',
+    tag: 'Technical Comparison',
+    readTime: '10',
+  },
+  {
+    titleEn: 'Understanding M12 Connector Coding: A, B, D, X-Code Explained',
+    titleZh: 'M12 连接器编码详解：A、B、D、X-Code 说明',
+    excerptEn: 'Everything you need to know about M12 connector coding types. Which code do you need for sensors, Ethernet, or power? Complete reference guide.',
+    excerptZh: '关于 M12 连接器编码类型你需要知道的一切。传感器、以太网或电源该选哪种编码？完整参考指南。',
+    date: '2025-06-05',
+    href: '/blog/m12-connector-coding-guide',
+    tag: 'Reference',
+    readTime: '6',
+  },
+];
+---
+
+<Layout
+  title="Blog"
+  description="Technical guides and resources on MIPI cables, M12 connectors, cable shielding, and robotics vision systems from VisionCable Supply."
+>
+  <section class="page-header">
+    <div class="container">
+      <span class="badge" data-i18n="blog.badge">Technical Resources</span>
+      <h1 data-i18n-html="blog.title"><span data-i18n="blog.title1">Engineering Guides &amp;</span><br/><span data-i18n="blog.title2">Cable Selection Tips</span></h1>
+      <p data-i18n="blog.desc">Practical, technical articles to help you choose the right cables and connectors for your application. Written by engineers, for engineers.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-list">
+        {posts.map(post => (
+          <a href={post.href} class="blog-card card">
+            <div class="blog-meta">
+              <span class="blog-tag">{post.tag}</span>
+              <span class="blog-date">{post.date}</span>
+            </div>
+            <h2>
+              <span class="i18n-content" data-lang="en">{post.titleEn}</span>
+              <span class="i18n-content" data-lang="zh" style="display:none;">{post.titleZh}</span>
+            </h2>
+            <p>
+              <span class="i18n-content" data-lang="en">{post.excerptEn}</span>
+              <span class="i18n-content" data-lang="zh" style="display:none;">{post.excerptZh}</span>
+            </p>
+            <div class="blog-footer">
+              <span class="blog-read">{post.readTime} <span data-i18n="blog.minRead">min read</span></span>
+              <span class="blog-link" data-i18n="blog.readArticle">Read Article &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #f0f5ff 0%, #e8f4f8 100%);
+  padding: 60px 0 48px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin: 16px 0 12px;
+}
+
+.page-header p {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blog-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blog-card {
+  display: block;
+  padding: 32px;
+  color: inherit;
+}
+
+.blog-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.blog-tag {
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.blog-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.blog-card:hover h2 {
+  color: var(--color-primary);
+}
+
+.blog-card p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.blog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-read {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.blog-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+</style>

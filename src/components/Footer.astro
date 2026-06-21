@@ -1,0 +1,129 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col footer-brand">
+      <a href="/" class="footer-logo">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="6" fill="#0b63ce"/>
+          <path d="M8 12h4v8H8zM14 8h4v16h-4zM20 12h4v8h-4z" fill="#fff"/>
+          <circle cx="16" cy="6" r="3" fill="#00b8a3"/>
+        </svg>
+        <span>VisionCable Supply</span>
+      </a>
+      <p class="footer-desc" data-i18n="footer.desc">
+        Specialized in MIPI, GMSL, M12 industrial cables and connectors for robotics and machine vision applications.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.products">Products</h4>
+      <ul>
+        <li><a href="/products/mipi-csi2-cables">MIPI CSI-2 Cables</a></li>
+        <li><a href="/products/m12-industrial-connectors">M12 Industrial Connectors</a></li>
+        <li><a href="/products" data-i18n="footer.viewAll">View All</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.company">Company</h4>
+      <ul>
+        <li><a href="/about" data-i18n="footer.about">About Us</a></li>
+        <li><a href="/blog" data-i18n="footer.blog">Blog</a></li>
+        <li><a href="/contact" data-i18n="footer.contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.getTouch">Get in Touch</h4>
+      <p>Email: <a href="mailto:info@visioncablesupply.com">info@visioncablesupply.com</a></p>
+      <p>WeChat / WhatsApp: +86-138-xxxx-xxxx</p>
+      <p>Shenzhen, China</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {year} VisionCable Supply. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: var(--color-dark);
+  color: #b4c2d9;
+  margin-top: 80px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 56px;
+  padding-bottom: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-brand {
+  flex: 2;
+  min-width: 260px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: #b4c2d9;
+  font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+}
+
+.footer-bottom p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8896ab;
+}
+</style>

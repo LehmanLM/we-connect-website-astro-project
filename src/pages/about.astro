@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About"
+  description="VisionCable Supply was founded by embedded systems engineers to bring technical expertise to industrial cable sourcing."
+>
+  <section class="page-header">
+    <div class="container">
+      <span class="badge" data-i18n="about.badge">Our Story</span>
+      <h1 data-i18n="about.title">Engineer-Founded. Quality-Driven.</h1>
+      <p data-i18n="about.desc">We started VisionCable because we saw a gap: robotics companies needed cables, but cable suppliers did not understand the engineering behind them.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-content">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 data-i18n="about.whyStarted">Why We Started</h2>
+          <p>
+            After years working in embedded systems, camera pipelines, and automotive electronics,
+            we noticed the same problem over and over: engineers and procurement teams spending
+            weeks trying to find the right cable, only to receive products with incorrect
+            specifications or poor shielding.
+          </p>
+          <p>
+            Most cable suppliers on B2B platforms copy-paste generic descriptions and cannot
+            answer basic technical questions. They forward every inquiry to a factory and wait days
+            for a response. For a robotics engineer trying to ship a product, this is frustrating
+            and expensive.
+          </p>
+          <p>
+            We built VisionCable to be different. When you ask about MIPI lane configuration,
+            shielding coverage percentages, or M12 coding types, you are talking to someone who
+            actually understands signal integrity and connector specifications.
+          </p>
+        </div>
+        <div class="about-values">
+          <div class="value-card card">
+            <div class="value-icon">01</div>
+            <h3 data-i18n="about.values.tech">Technical Expertise</h3>
+            <p data-i18n="about.values.techDesc">We understand MIPI CSI-2, GMSL, FPD-Link, M12 coding, signal integrity, and shielding requirements. You get accurate answers, not guesswork.</p>
+          </div>
+          <div class="value-card card">
+            <div class="value-icon">02</div>
+            <h3 data-i18n="about.values.honest">Honest Specifications</h3>
+            <p data-i18n="about.values.honestDesc">We publish full specifications: AWG, impedance, shielding coverage, temperature range. No vague descriptions or hidden details.</p>
+          </div>
+          <div class="value-card card">
+            <div class="value-icon">03</div>
+            <h3 data-i18n="about.values.direct">Direct Communication</h3>
+            <p data-i18n="about.values.directDesc">No layers of sales reps between you and the answer. Ask a technical question, get a technical answer within 24 hours.</p>
+          </div>
+          <div class="value-card card">
+            <div class="value-icon">04</div>
+            <h3 data-i18n="about.values.verified">Verified Quality</h3>
+            <p data-i18n="about.values.verifiedDesc">Every cable is continuity-tested and visually inspected before shipping. We do not ship untested products, period.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-card card">
+        <h2 data-i18n="about.locationTitle">Based in Shenzhen, China</h2>
+        <p data-i18n="about.locationDesc">
+          We are located in Shenzhen, the world's electronics manufacturing hub. This gives us
+          direct access to connector manufacturers, cable assembly factories, and component
+          suppliers throughout the Pearl River Delta region.
+        </p>
+        <div class="location-features">
+          <div class="loc-feature">
+            <strong data-i18n="about.feature1.title">Direct Factory Access</strong>
+            <p data-i18n="about.feature1.desc">Skip the trading company markup. We work directly with ISO-certified manufacturers.</p>
+          </div>
+          <div class="loc-feature">
+            <strong data-i18n="about.feature2.title">Fast Prototyping</strong>
+            <p data-i18n="about.feature2.desc">Sample cables typically ready in 5-7 working days.</p>
+          </div>
+          <div class="loc-feature">
+            <strong data-i18n="about.feature3.title">Quality Control</strong>
+            <p data-i18n="about.feature3.desc">On-site inspection and testing before any shipment leaves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #f0f5ff 0%, #e8f4f8 100%);
+  padding: 60px 0 48px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin: 16px 0 12px;
+}
+
+.page-header p {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.value-card {
+  padding: 24px;
+}
+
+.value-icon {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.value-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.location-card {
+  padding: 40px;
+  background: var(--color-bg-alt);
+}
+
+.location-card h2 {
+  margin-bottom: 16px;
+}
+
+.location-card > p {
+  margin-bottom: 32px;
+}
+
+.location-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.loc-feature strong {
+  display: block;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.loc-feature p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-values { grid-template-columns: 1fr; }
+}
+</style>

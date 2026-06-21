@@ -1,0 +1,264 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact"
+  description="Contact VisionCable Supply for quotes, technical questions, or custom cable inquiries. We respond within 24 hours."
+>
+  <section class="page-header">
+    <div class="container">
+      <span class="badge" data-i18n="contact.badge">Get in Touch</span>
+      <h1 data-i18n-html="contact.title"><span data-i18n="contact.title1">Request a Quote or</span><br/><span data-i18n="contact.title2">Ask a Technical Question</span></h1>
+      <p data-i18n="contact.desc">Tell us about your project. Whether you need a standard product or a custom solution, we will respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-form-wrapper card">
+        <h2 data-i18n="contact.formTitle">Send Us a Message</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name" data-i18n="contact.name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="John Smith" />
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contact.email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="john@company.com" />
+          </div>
+          <div class="form-group">
+            <label for="company" data-i18n="contact.company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Acme Robotics" />
+          </div>
+          <div class="form-group">
+            <label for="product" data-i18n="contact.productInterest">Product Interest</label>
+            <select id="product" name="product">
+              <option value="" data-i18n="contact.selectProduct">Select a product</option>
+              <option value="mipi">MIPI CSI-2 Camera Cables</option>
+              <option value="m12">M12 Industrial Connectors</option>
+              <option value="gmsl">GMSL / FPD-Link Cables</option>
+              <option value="ethernet">Industrial Ethernet Cables</option>
+              <option value="sensor">Sensor &amp; Actuator Cables</option>
+              <option value="custom">Custom Cable Assembly</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact.message">Project Details *</label>
+            <textarea id="message" name="message" rows="6" required
+              data-i18n-placeholder="contact.messagePlaceholder"
+              placeholder="Tell us about your application: what sensor/SoC you are using, required cable length, connector type, quantities needed, timeline..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;" data-i18n="contact.send">Send Message</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div class="info-block card">
+          <h3 data-i18n="contact.directContact">Direct Contact</h3>
+          <div class="info-row">
+            <span class="info-label">Email</span>
+            <a href="mailto:info@visioncablesupply.com">info@visioncablesupply.com</a>
+          </div>
+          <div class="info-row">
+            <span class="info-label">WhatsApp</span>
+            <span>+86-138-xxxx-xxxx</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Skype</span>
+            <span>visioncable.supply</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Location</span>
+            <span>Shenzhen, Guangdong, China</span>
+          </div>
+        </div>
+
+        <div class="info-block card">
+          <h3 data-i18n="contact.responseTimes">Response Times</h3>
+          <div class="response-item">
+            <span class="response-time" data-i18n="contact.quote">Quote</span>
+            <span class="response-value" data-i18n="contact.less24h">&lt; 24 hours</span>
+          </div>
+          <div class="response-item">
+            <span class="response-time" data-i18n="contact.techQuestion">Technical Question</span>
+            <span class="response-value" data-i18n="contact.less24h">&lt; 24 hours</span>
+          </div>
+          <div class="response-item">
+            <span class="response-time" data-i18n="contact.sampleLead">Sample Lead Time</span>
+            <span class="response-value" data-i18n="contact.5to7days">5-7 days</span>
+          </div>
+          <div class="response-item">
+            <span class="response-time" data-i18n="contact.prodLead">Production Lead Time</span>
+            <span class="response-value" data-i18n="contact.2to4weeks">2-4 weeks</span>
+          </div>
+        </div>
+
+        <div class="info-block card highlight-card">
+          <h3 data-i18n="contact.beforeWrite">Before You Write</h3>
+          <p>To help us give you the fastest and most accurate response, please include:</p>
+          <ul>
+            <li>Your sensor or SoC model number</li>
+            <li>Required cable length</li>
+            <li>Connector type (or share datasheet)</li>
+            <li>Estimated quantity</li>
+            <li>Target timeline</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #f0f5ff 0%, #e8f4f8 100%);
+  padding: 60px 0 48px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin: 16px 0 12px;
+}
+
+.page-header p {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+}
+
+.contact-form-wrapper {
+  padding: 36px;
+}
+
+.contact-form-wrapper h2 {
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-status {
+  text-align: center;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-block {
+  padding: 24px;
+}
+
+.info-block h3 {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}
+
+.info-label {
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+.response-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}
+
+.response-time {
+  color: var(--color-text-light);
+}
+
+.response-value {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+  border-color: var(--color-primary);
+}
+
+.highlight-card ul {
+  padding-left: 1.2em;
+  margin-top: 12px;
+}
+
+.highlight-card li {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .page-header h1 { font-size: 1.6rem; }
+}
+</style>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    status.textContent = 'Thank you! Your message has been received. We will respond within 24 hours.';
+    status.style.color = '#00b8a3';
+    form.reset();
+  });
+</script>

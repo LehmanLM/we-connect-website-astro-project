@@ -1,0 +1,185 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="How to Choose the Right MIPI Cable for Your Robot Camera"
+  description="A practical guide to selecting MIPI CSI-2 cables based on lane count, pitch, shielding, and connector compatibility for robotics vision applications."
+  publishDate="2025-06-15"
+  readTime="8"
+  tag="Selection Guide"
+>
+  <div class="blog-post-body">
+    <div class="i18n-content" data-lang="en">
+      <h1>How to Choose the Right MIPI Cable for Your Robot Camera</h1>
+
+      <p>Selecting the correct MIPI CSI-2 cable is critical for getting clean, reliable image data from your camera sensor to your processor. A wrong cable choice can cause image corruption, intermittent failures, or complete signal loss — problems that are extremely difficult to debug after your robot is assembled.</p>
+
+      <p>This guide walks through the key parameters you need to consider.</p>
+
+      <h2>1. Lane Count: How Many Lanes Do You Need?</h2>
+      <p>MIPI CSI-2 uses differential data lanes to transmit image data. More lanes = more bandwidth.</p>
+
+      <table>
+        <thead><tr><th>Lane Count</th><th>Max Data Rate</th><th>Typical Use Case</th></tr></thead>
+        <tbody>
+          <tr><td>1-Lane</td><td>~500 Mbps</td><td>Low-res sensors (VGA, 1MP)</td></tr>
+          <tr><td>2-Lane</td><td>~1 Gbps</td><td>Medium-res sensors (2MP-5MP, 30fps)</td></tr>
+          <tr><td>4-Lane</td><td>~2-4 Gbps</td><td>High-res sensors (8MP+, 4K, high fps)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Rule of thumb:</strong> Match the lane count to your sensor's output capability. A 4-Lane sensor on a 1-Lane cable will not work. A 1-Lane sensor on a 4-Lane cable works but wastes money.</p>
+
+      <h2>2. Connector Pitch: Get This Right First</h2>
+      <p>The connector pitch (pin spacing) must match both your sensor board and your processor board.</p>
+
+      <table>
+        <thead><tr><th>Pitch</th><th>Common Connectors</th><th>Typical Application</th></tr></thead>
+        <tbody>
+          <tr><td>0.4mm</td><td>Hirose DF40</td><td>Compact camera modules</td></tr>
+          <tr><td>0.5mm</td><td>Hirose FH12, FH26</td><td>Standard CSI-2 modules</td></tr>
+          <tr><td>1.0mm</td><td>JST, Molex</td><td>Prototyping, larger sensors</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>This is the #1 mistake people make.</strong> Always verify the pitch on both ends before ordering a cable.</p>
+
+      <h2>3. Shielding: Critical for Robotics</h2>
+      <p>In a robot, there are motors, PWM signals, and wireless transmitters — all of which generate EMI that can corrupt MIPI signals.</p>
+
+      <h3>Minimum shielding requirements:</h3>
+      <ul>
+        <li><strong>Aluminum foil shield</strong> (inner layer): 100% coverage</li>
+        <li><strong>Copper braid shield</strong> (outer layer): 85%+ coverage</li>
+        <li><strong>Drain wire</strong>: Connected to GND on both ends</li>
+      </ul>
+
+      <h3>How to verify:</h3>
+      <p>Ask your supplier for the shielding coverage percentage. If they cannot answer or say "standard shielding," that is a red flag. Look for specific numbers.</p>
+
+      <h2>4. Cable Length and Signal Integrity</h2>
+      <p>MIPI CSI-2 is designed for short-distance communication. As cable length increases, signal degradation increases.</p>
+
+      <table>
+        <thead><tr><th>Length</th><th>Risk Level</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>50-150mm</td><td>Safe</td><td>Optimal range</td></tr>
+          <tr><td>150-300mm</td><td>Moderate</td><td>Good shielding required</td></tr>
+          <tr><td>300-500mm</td><td>Caution</td><td>Premium coaxial cable needed</td></tr>
+          <tr><td>500mm+</td><td>Risky</td><td>Consider GMSL or FPD-Link instead</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>If your cable needs to be longer than 500mm, MIPI may be the wrong choice.</strong> Consider GMSL (Gigabit Multimedia Serial Link) or FPD-Link III, which are designed for long-distance serdes communication.</p>
+
+      <h2>5. Impedance Matching</h2>
+      <p>MIPI CSI-2 uses 90-ohm differential impedance. Using a cable with mismatched impedance causes signal reflections and data corruption.</p>
+      <ul>
+        <li>Standard MIPI cable: <strong>90 Ohm +/-10%</strong></li>
+        <li>Do NOT substitute with USB cable (90 ohm but different construction)</li>
+        <li>Do NOT substitute with HDMI cable (100 ohm)</li>
+      </ul>
+
+      <h2>Quick Checklist</h2>
+      <p>Before ordering, confirm:</p>
+      <ul>
+        <li>Sensor model and lane count</li>
+        <li>Connector pitch on both ends</li>
+        <li>Required cable length</li>
+        <li>Shielding specification (foil + braid coverage %)</li>
+        <li>Operating temperature range</li>
+        <li>Any special environmental requirements (oil resistance, vibration)</li>
+      </ul>
+
+      <hr/>
+      <p><em>Have questions? Email info@visioncablesupply.com for a response within 24 hours.</em></p>
+    </div>
+
+    <div class="i18n-content" data-lang="zh" style="display:none;">
+      <h1>如何为机器人摄像头选择合适的 MIPI 线缆</h1>
+
+      <p>选择正确的 MIPI CSI-2 线缆对于从摄像头传感器到处理器的图像数据传输至关重要。线缆选错会导致图像花屏、间歇性故障或信号完全丢失——这些问题在机器人组装完成后极难排查。</p>
+
+      <p>本指南介绍你需要考虑的关键参数。</p>
+
+      <h2>1. Lane 数量：你需要几条 Lane？</h2>
+      <p>MIPI CSI-2 使用差分数据 Lane 来传输图像数据。Lane 越多 = 带宽越大。</p>
+
+      <table>
+        <thead><tr><th>Lane 数量</th><th>最大数据速率</th><th>典型应用</th></tr></thead>
+        <tbody>
+          <tr><td>1-Lane</td><td>~500 Mbps</td><td>低分辨率传感器（VGA、100万像素）</td></tr>
+          <tr><td>2-Lane</td><td>~1 Gbps</td><td>中分辨率传感器（200-500万像素，30fps）</td></tr>
+          <tr><td>4-Lane</td><td>~2-4 Gbps</td><td>高分辨率传感器（800万像素+，4K，高帧率）</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>原则：</strong> Lane 数量要匹配传感器的输出能力。4-Lane 传感器用 1-Lane 线缆无法工作。1-Lane 传感器用 4-Lane 线缆可以工作但浪费钱。</p>
+
+      <h2>2. 连接器间距：首先确认这个参数</h2>
+      <p>连接器间距（引脚间距）必须同时匹配你的传感器板和处理器板。</p>
+
+      <table>
+        <thead><tr><th>间距</th><th>常见连接器</th><th>典型应用</th></tr></thead>
+        <tbody>
+          <tr><td>0.4mm</td><td>Hirose DF40</td><td>紧凑型摄像头模组</td></tr>
+          <tr><td>0.5mm</td><td>Hirose FH12、FH26</td><td>标准 CSI-2 模组</td></tr>
+          <tr><td>1.0mm</td><td>JST、Molex</td><td>原型开发、较大传感器</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>这是最常见的错误。</strong> 订购线缆前一定要确认两端的间距。</p>
+
+      <h2>3. 屏蔽：机器人应用中至关重要</h2>
+      <p>机器人内部有电机、PWM 信号和无线发射器——这些都会产生 EMI 干扰，可能损坏 MIPI 信号。</p>
+
+      <h3>最低屏蔽要求：</h3>
+      <ul>
+        <li><strong>铝箔屏蔽</strong>（内层）：覆盖率 100%</li>
+        <li><strong>铜编织屏蔽</strong>（外层）：覆盖率 85%+</li>
+        <li><strong>接地线</strong>：两端均连接 GND</li>
+      </ul>
+
+      <h3>如何验证：</h3>
+      <p>向供应商询问屏蔽覆盖率。如果他们回答不了或说"标准屏蔽"，这是一个危险信号。要看具体的数字。</p>
+
+      <h2>4. 线缆长度与信号完整性</h2>
+      <p>MIPI CSI-2 设计用于短距离通信。线缆越长，信号衰减越大。</p>
+
+      <table>
+        <thead><tr><th>长度</th><th>风险等级</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>50-150mm</td><td>安全</td><td>最佳范围</td></tr>
+          <tr><td>150-300mm</td><td>中等</td><td>需要良好屏蔽</td></tr>
+          <tr><td>300-500mm</td><td>需注意</td><td>需要高品质同轴线缆</td></tr>
+          <tr><td>500mm+</td><td>高风险</td><td>建议改用 GMSL 或 FPD-Link</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>如果你的线缆需要超过 500mm，MIPI 可能不是正确的选择。</strong> 考虑 GMSL 或 FPD-Link III，它们专为长距离 SerDes 通信设计。</p>
+
+      <h2>5. 阻抗匹配</h2>
+      <p>MIPI CSI-2 使用 90 欧姆差分阻抗。使用阻抗不匹配的线缆会导致信号反射和数据损坏。</p>
+      <ul>
+        <li>标准 MIPI 线缆：<strong>90 欧姆 +/-10%</strong></li>
+        <li>不要用 USB 线替代（90 欧姆但结构不同）</li>
+        <li>不要用 HDMI 线替代（100 欧姆）</li>
+      </ul>
+
+      <h2>快速检查清单</h2>
+      <p>订购前确认：</p>
+      <ul>
+        <li>传感器型号和 Lane 数量</li>
+        <li>两端的连接器间距</li>
+        <li>所需线缆长度</li>
+        <li>屏蔽规格（铝箔 + 编织覆盖率）</li>
+        <li>工作温度范围</li>
+        <li>任何特殊环境要求（耐油、抗震）</li>
+      </ul>
+
+      <hr/>
+      <p><em>有问题？发送邮件至 info@visioncablesupply.com，24 小时内回复。</em></p>
+    </div>
+  </div>
+</BlogLayout>

@@ -1,0 +1,116 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const navLinks = [
+  { href: '/', i18nKey: 'nav.home' },
+  { href: '/products', i18nKey: 'nav.products' },
+  { href: '/about', i18nKey: 'nav.about' },
+  { href: '/blog', i18nKey: 'nav.blog' },
+  { href: '/contact', i18nKey: 'nav.contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="6" fill="#0b63ce"/>
+        <path d="M8 12h4v8H8zM14 8h4v16h-4zM20 12h4v8h-4z" fill="#fff"/>
+        <circle cx="16" cy="6" r="3" fill="#00b8a3"/>
+      </svg>
+      <span class="logo-text">VisionCable<sup>Supply</sup></span>
+    </a>
+    <nav class="nav">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={["nav-link", { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+          data-i18n={link.i18nKey}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <div class="header-right">
+      <LanguageSwitcher />
+      <a href="/contact" class="btn btn--primary header-cta" data-i18n="nav.getQuote">Get Quote</a>
+    </div>
+  </div>
+</header>
+
+<style>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.logo sup {
+  font-size: 0.6rem;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-cta {
+  padding: 8px 24px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+</style>
