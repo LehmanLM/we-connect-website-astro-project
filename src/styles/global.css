@@ -160,6 +160,10 @@ h3 { font-size: 1.3rem; }
   width: 100%;
   border-collapse: collapse;
   margin: 16px 0;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
 }
 
 .spec-table th,
@@ -211,6 +215,7 @@ h3 { font-size: 1.3rem; }
   border-radius: var(--radius);
   overflow-x: auto;
   margin: 1.5em 0;
+  font-size: 0.85rem;
 }
 
 .prose code {
@@ -222,6 +227,9 @@ h3 { font-size: 1.3rem; }
   width: 100%;
   border-collapse: collapse;
   margin: 1.5em 0;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose table th,
@@ -234,8 +242,37 @@ h3 { font-size: 1.3rem; }
   background: var(--color-bg-alt);
 }
 
-@media (max-width: 640px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
+/* ============ Tablet & below (≤ 768px) ============ */
+@media (max-width: 768px) {
+  :root {
+    --max-width: 100%;
+  }
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.15rem; }
+  body { font-size: 15px; }
+  .container { padding: 0 20px; }
   .section { padding: 48px 0; }
+  .grid { gap: 20px; }
+  .grid--3 { grid-template-columns: 1fr; }
+  .grid--2 { grid-template-columns: 1fr; }
+  .section-subtitle { font-size: 1rem; margin-bottom: 32px; }
+  .badge { font-size: 0.72rem; padding: 3px 12px; }
+  .btn { padding: 11px 24px; font-size: 0.95rem; display: block; width: 100%; text-align: center; }
+  .btn--outline { margin-top: 10px; }
+  .prose { font-size: 0.95rem; }
+}
+
+/* ============ Mobile (≤ 480px) ============ */
+@media (max-width: 480px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  .container { padding: 0 16px; }
+  .section { padding: 36px 0; }
+  .card { border-radius: 12px; }
+  .spec-table th,
+  .spec-table td { padding: 8px 10px; font-size: 0.85rem; }
+  .prose pre { padding: 14px; font-size: 0.8rem; }
+  .prose table th,
+  .prose table td { padding: 8px 10px; font-size: 0.85rem; }
 }

@@ -222,8 +222,15 @@ const codingGuide = [
   margin-top: 48px;
 }
 
-@media (max-width: 640px) {
-  .detail-cta { flex-direction: column; }
-  .page-header h1 { font-size: 1.6rem; }
+@media (max-width: 768px) {
+  .detail-cta { flex-direction: column; gap: 10px; }
+  .info-grid { grid-template-columns: 1fr; gap: 16px; }
+  .info-card { padding: 20px; }
+  .selection-guide { padding: 22px; }
+  .app-tag { padding: 6px 12px; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 { font-size: 1.5rem; }
 }
 </style>
